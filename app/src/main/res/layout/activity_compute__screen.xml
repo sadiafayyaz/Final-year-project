@@ -58,7 +58,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="500km"
+                    android:text="1000km"
                     android:textSize="14sp"
                     android:textColor="#0480C0"
                     />
@@ -81,7 +81,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="100km"
+                    android:text="200km"
                     android:textSize="14sp"
                     android:textColor="#0480C0"
                     />
@@ -104,7 +104,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="62m"
+                    android:text="800m"
                     android:textSize="14sp"
                     android:textColor="#0480C0"
                     />
@@ -151,7 +151,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="33.35 Ltr"
+                    android:text="40.00 Ltr"
                     android:textSize="14sp"
                     android:textColor="#0480C0"
                     />
@@ -174,7 +174,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0.015 Ltr"
+                    android:text="0.125 Ltr"
                     android:textSize="14sp"
                     android:textColor="#0480C0"
                     />
@@ -197,7 +197,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0.093 Ltr"
+                    android:text="2.560 Ltr"
                     android:textSize="14sp"
                     android:textColor="#0480C0"
                     />

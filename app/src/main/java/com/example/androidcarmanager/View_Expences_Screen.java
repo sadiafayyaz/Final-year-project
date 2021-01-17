@@ -27,6 +27,7 @@ public class View_Expences_Screen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view__expences__screen);
+        getSupportActionBar().hide();
 
         tabLayout=(TabLayout)findViewById(R.id.tabLayout);
 
