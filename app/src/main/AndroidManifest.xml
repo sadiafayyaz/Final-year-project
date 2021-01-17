@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.androidcarmanager">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,11 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Reminder_Screen"></activity>
+        <activity android:name=".Expense_Detail_Screen"></activity>
+        <activity android:name=".Add_Reminder_Screen" />
+        <activity android:name=".Add_Notes_Screen" />
+        <activity android:name=".Reminder_Screen" />
         <activity android:name=".View_Expences_Screen" />
         <activity android:name=".Add_Files_Screen" />
         <activity android:name=".Compute_Screen" />
-        <activity android:name=".View_Expenses_Screen" />
         <activity android:name=".Gallery_Screen" />
         <activity android:name=".Add_Expenses_Screen" />
         <activity android:name=".Forget_Password_Screen" />

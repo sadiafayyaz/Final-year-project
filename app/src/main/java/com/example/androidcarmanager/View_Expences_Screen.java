@@ -1,47 +1,87 @@
 package com.example.androidcarmanager;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.graphics.Color;
 import android.os.Bundle;
-import android.text.Html;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.utils.ColorTemplate;
+import com.google.android.material.tabs.TabLayout;
+import com.example.androidcarmanager.R;
 
 import java.util.ArrayList;
 
 public class View_Expences_Screen extends AppCompatActivity {
+
+    TabLayout tabLayout;
     BarChart barChart;
     BarData barData;
     BarDataSet barDataSet;
     ArrayList barEntries;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view__expences__screen);
-        setTitle(Html.fromHtml("<font color='#3477e3'>View Expenses</font>"));
 
-        barChart = findViewById(R.id.barchart);
+        tabLayout=(TabLayout)findViewById(R.id.tabLayout);
+
+        barChart = findViewById(R.id.mychart);
         getEntries();
-        barDataSet = new BarDataSet(barEntries, "Data Set");
+        barDataSet = new BarDataSet(barEntries, "Expenses");
         barData = new BarData(barDataSet);
         barChart.setData(barData);
         barDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
         barDataSet.setValueTextColor(Color.BLUE);
-        barDataSet.setValueTextSize(16f);
+        barDataSet.setValueTextSize(12);
+
+
+
+
+
+
+
+
+
+
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
     }
+
+
     private void getEntries() {
         barEntries = new ArrayList<>();
-        barEntries.add(new BarEntry(1f, 2));
-        barEntries.add(new BarEntry(2f, 4));
+        barEntries.add(new BarEntry(1, 2));
+        barEntries.add(new BarEntry(2, 4));
         barEntries.add(new BarEntry(3f, 3));
+        barEntries.add(new BarEntry(4f, 3));
         barEntries.add(new BarEntry(5f, 1));
         barEntries.add(new BarEntry(6f, 5));
         barEntries.add(new BarEntry(7f, 2));
+        barEntries.add(new BarEntry(8f, 3));
+        barEntries.add(new BarEntry(9f, 3));
+        barEntries.add(new BarEntry(10f, 1));
+        barEntries.add(new BarEntry(11f, 5));
+        barEntries.add(new BarEntry(12f, 2));
     }
 
 }

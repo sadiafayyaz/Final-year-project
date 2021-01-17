@@ -3,6 +3,7 @@ package com.example.androidcarmanager;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -14,34 +15,35 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Gallery_Screen extends AppCompatActivity {
-Button btncapture,btnviewimage;
-TextView saveimage;
-ImageView displayimage;
+    ImageView imageView;
+    String[] service={"Maintenance","Fuel","Purchase","Service","Engine Tunning","Fine","Tax"};
+    private static final int CAMERA_REQUEST = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gallery__screen);
         getSupportActionBar().hide();
-        btncapture =   (Button) findViewById(R.id.btncapture);
-        btnviewimage =   (Button) findViewById(R.id.View);
-        saveimage = (TextView) findViewById(R.id.save);
-        displayimage = (ImageView) findViewById(R.id.captureimage);
-        btncapture.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(i,0);
-            }
-        });
+
+
+        imageView=(ImageView)findViewById(R.id.captureimage);
+
+        capture();
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    public  void capture(){
+        Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(cameraIntent, CAMERA_REQUEST);
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-
-    Bitmap bitmap = (Bitmap)data.getExtras().get("data");
-   displayimage.setImageBitmap(bitmap);
+        if(requestCode == CAMERA_REQUEST && resultCode == Activity.RESULT_OK){
+            Bitmap photo=(Bitmap)data.getExtras().get("data");
+            imageView.setVisibility(View.VISIBLE);
+            imageView.setImageBitmap(photo);
+        }
     }
+
 
 }

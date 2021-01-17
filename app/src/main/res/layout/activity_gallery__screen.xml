@@ -4,71 +4,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
+    android:layout_gravity="center_horizontal"
     android:orientation="vertical"
     tools:context=".Gallery_Screen">
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/save"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Save"
-        android:textColor="#0480C0"
-        android:textStyle="bold"
-        android:padding="5dp"
-        android:layout_alignRight="@id/captureimage"
-        android:textSize="16dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="3dp"
-        android:layout_marginRight="5dp"
-        />
+
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
         android:id="@+id/captureimage"
-        android:layout_marginTop="40dp">
+        android:src="@drawable/ic_image_black_24dp"
+        android:padding="40dp"
+        android:scaleType="centerCrop"
+        >
 
     </ImageView>
-    </RelativeLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="15dp"
-        android:layout_marginTop="10dp">
+        android:layout_height="200dp"
+        android:padding="30dp">
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/round_border"
+            android:ems="10"
+            android:paddingRight="8dp"
+            android:paddingLeft="8dp"
+            android:drawablePadding="13dp"
+            android:textSize="16sp"
+            android:inputType="textEmailAddress"
+            android:hint="Image Title" />
+
 
         <Button
             android:id="@+id/btncapture"
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="60dp"
             android:textStyle="bold"
             android:textSize="18sp"
             android:layout_marginLeft="5dp"
             android:layout_below="@+id/textView2"
             android:textColor="#ffffff"
             android:background="@drawable/round_button"
-            android:text="Capture Image"
+            android:text="Upload Image"
             android:layout_centerHorizontal="true"
             android:padding="8dp"/>
-
-        <Button
-            android:id="@+id/View"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_marginTop="8dp"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:layout_marginLeft="5dp"
-            android:layout_below="@+id/btncapture"
-            android:textColor="#ffffff"
-            android:background="@drawable/round_button"
-            android:text="View image"
-            android:layout_centerHorizontal="true"
-            android:padding="5dp"/>
 
     </RelativeLayout>
 
